@@ -16,6 +16,19 @@ As a user I want to:
 - Be able to rate a car between 1-5 stars
 - Be able to leave a comment/notes (i.e pros/cons, changes/mods you may want to make on car, etc.) specific to that car and tied to my username.
 
+Technologies Used
+HTML
+CSS
+Javascript
+Liquid-Express
+Node.js
+Express
+MongoDB
+MongoDB Atlas
+Mongoose
+
+
+
 ![PXL_20220610_203917871](https://user-images.githubusercontent.com/102341554/173152563-c218ea1c-67e4-477b-ad6e-609198de1184.jpg)
 ![PXL_20220610_203935065](https://user-images.githubusercontent.com/102341554/173152566-3b280500-4a54-4443-ab14-5c509a698105.jpg)
 ![PXL_20220610_203945266](https://user-images.githubusercontent.com/102341554/173152570-fb078cd0-5b42-4b9b-9d2b-4911e580cb2c.jpg)
