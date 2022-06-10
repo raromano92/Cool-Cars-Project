@@ -3,7 +3,7 @@
 SEi 5/9 Project #2
 
 Premise:
-This is a Full Stack CRUD application that allows a user to have their own personal car collection specific to them. They can create new entries if they find a new car that they like and store for the future in case one day they would like to purchase it! Enjoy viewing some of the coolest rides out there!
+This is a Full Stack CRUD application that allows a user to have their own personal car collection specific to them. They can create new entries if they find a new car that they like and store for the future in case one day they would like to purchase it! Enjoy checking out some of the coolest rides out there!
 
 User Story
 
