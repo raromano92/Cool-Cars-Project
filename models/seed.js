@@ -85,20 +85,20 @@ db.on('open', () => {
 			Img: 'https://images.hgmsites.net/hug/classic-recreations-1969-ford-mustang-mach-1-hitman_100736009_h.jpg',
 		},
 	];
-	// Delete all cars
-	Car.deleteMany({}).then((deletedCars) => {
-		// add the starter cars
-		Car.create(startCars)
-			.then((newCars) => {
-				// log the new fruits to confirm their creation
-				console.log(newCars);
-				db.close();
-			})
-			.catch((error) => {
-				console.log(error);
-				db.close();
-			});
-	});
+	// // Delete all cars
+	// Car.deleteMany({}).then((deletedCars) => {
+	// 	// add the starter cars
+	// 	Car.create(startCars)
+	// 		.then((newCars) => {
+	// 			// log the new cars to confirm their creation
+	// 			console.log(newCars);
+	// 			db.close();
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(error);
+	// 			db.close();
+	// 		});
+	// });
 	/////////////////////////////////////////////
 	// Write your Seed Code Above
 	////////////////////////////////////////////

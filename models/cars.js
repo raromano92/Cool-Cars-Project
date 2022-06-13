@@ -1,5 +1,5 @@
 const mongoose = require('./connection');
-// const carz = require('./car');
+
 const { Schema, model } = mongoose;
 
 const carsSchema = new Schema({

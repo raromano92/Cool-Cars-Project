@@ -10,13 +10,26 @@ const router = express.Router();
 		ROUTES
 ========================================*/
 // ALL ROUTES START WITH /CARS WHEN USING ROUTER
-router.get('/', (req, res) => {
-	res.send('TESTEST');
-});
+// ** INDEX ROUTE **
+// index route
+router.get("/", (req, res) => {
+	// find all the fruits
+	myCars.find({})
+	  // render a template after they are found
+	  .then((data) => {
+		console.log(data);
+		res.render("cars/index", { data });
+	  })
+	  // send error as json if they aren't
+	  .catch((error) => {
+		console.log(error);
+		res.json({ error });
+	  });
+  });
 
 // db.on('open', () => {
 router.get('/seed', (req, res) => {
-	// array of starter fruits
+	// array of starter cars
 	const startCars = [
 		{
 			Year: 1997,
