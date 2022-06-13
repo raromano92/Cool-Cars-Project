@@ -1,5 +1,11 @@
+// DEPENDENCIES
+const express = require('express');
+const seed = require('../models/seed');
+const myCars = require('../models/cars');
+const router = express.Router();
+
 // db.on('open', () => {
-    router.get('/seed', (req, res) => {
+    router.get('/', (req, res) => {
         // array of starter cars
         const startCars = [
             {
@@ -67,12 +73,14 @@
                 Img: 'https://images.hgmsites.net/hug/classic-recreations-1969-ford-mustang-mach-1-hitman_100736009_h.jpg',
             },
         ];
-    //     // Delete all fruits
-    //     myCars.deleteMany({}).then((data) => {
-    //         // Seed Starter Fruits
-    //         myCars.create(startCars).then((data) => {
-    //             // send created fruits as response to confirm creation
-    //             res.json(data);
-    //         });
-    //     });
+        // Delete all fruits
+        myCars.deleteMany({}).then((data) => {
+            // Seed Starter Fruits
+            myCars.create(startCars).then((data) => {
+                // send created fruits as response to confirm creation
+                res.json(data);
+            });
+        });
     });
+
+    module.exports = router

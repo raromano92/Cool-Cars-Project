@@ -51,6 +51,7 @@ app.use(
 ////////////////////////////////////////////
 const userRouter = require('./routes/users');
 const carRouter = require('./routes/car');
+const seedRouter = require('./routes/seed');
 
 /*========================================
         Routes
@@ -66,6 +67,7 @@ app.get('/', (req, res) => {
 
 app.use('/users', userRouter);
 app.use('/cars', carRouter);
+app.use('/seed', seedRouter);
 
 app.listen(4000, (req, res) => {
 	console.log(`SERVER RUNNING ON PORT ${PORT}`);

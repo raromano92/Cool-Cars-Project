@@ -26,6 +26,14 @@ router.get("/", (req, res) => {
 });
   
 /*========================================
+		NEW
+========================================*/
+router.get('/new', (req, res) => {
+ 	res.render('cars/new.liquid')
+ })
+
+
+/*========================================
 		SHOW
 ========================================*/
 router.get('/:id', (req, res) => {
@@ -49,6 +57,23 @@ router.delete('/:id', (req, res) => {
 	myCars.findByIdAndRemove(id)
 		.then((data) => {
 		// Redirect back home
+		res.redirect('/cars')
+	})
+})
+
+
+
+
+
+
+
+
+/*========================================
+		CREATE
+========================================*/
+router.post('/', (req, res) => {
+	myCars.create(req.body)
+	.then((data) => {
 		res.redirect('/cars')
 	})
 })
