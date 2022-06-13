@@ -8,6 +8,9 @@
         
         <h1>{{ item.Make }}</h1>
         <a href="/cars/{{ item._id }}"><img src="{{ item.Img }}" width="200" alt="pic"></a>
+        <form action="/cars/{{ item._id }}?_method=DELETE" method="POST">
+			<input type="submit" value="REMOVE" />
+		</form>
     </div>
 	</article>
 

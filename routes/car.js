@@ -39,7 +39,21 @@ router.get('/:id', (req, res) => {
 		console.log(error);
 		res.json({ error });
 	  });
-  });
+});
+  
+/*========================================
+		DELETE
+========================================*/
+router.delete('/:id', (req, res) => {
+	const id = req.params.id
+	myCars.findByIdAndRemove(id)
+		.then((data) => {
+		// Redirect back home
+		res.redirect('/cars')
+	})
+})
+
+
 
 
 
