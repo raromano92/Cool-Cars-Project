@@ -1,0 +1,18 @@
+/*========================================
+        Routes
+========================================*/
+// I-N-D-U-C-E-S
+// index route ('/route') - method=GET
+
+// new route ('/route/new') - method=GET
+
+// delete route ('/route/:id') - method=DELETE
+
+// update route ('/route/:id') - method=PUT
+
+// create route ('/route') - method=POST
+
+// edit route ('/route/:id/edit') - method=GET
+
+// show route ('/route/:id') - method=GET
+

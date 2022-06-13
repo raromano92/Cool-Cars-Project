@@ -1,12 +1,17 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send("User List")
-})
+	console.log(req.query.name);
+	res.send('User Login');
+});
 
 router.get('/new', (req, res) => {
-    res.send("New User Form")
-})
+	res.send('New User Form');
+});
 
-module.exports = router
+router.get('/:id', (req, res) => {
+	res.send(`Get user with id ${req.params.id}`);
+});
+
+module.exports = router;
