@@ -1,0 +1,14 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+	<a href="/cars/new"><button>Create A New Car</button></a>
+	{% for car in cars %}
+	<article>
+		<a href="/cars/{{ cars._id }}">
+			<h2></h2>
+		</a>
+	</article>
+	{% endfor %}
+</div>
+{% endblock %}
+
+<a href="/user/logout"><button>Logout</button></a>

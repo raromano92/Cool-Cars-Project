@@ -50,7 +50,7 @@ app.use(
 // Routers
 ////////////////////////////////////////////
 const userRouter = require('./routes/users');
-const carRouter = require('./routes/cars');
+const carRouter = require('./routes/car');
 
 /*========================================
         Routes
