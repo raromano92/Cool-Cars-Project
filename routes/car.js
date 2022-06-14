@@ -10,9 +10,9 @@ const router = express.Router();
 		INDEX
 ========================================*/
 // ALL ROUTES START WITH /CARS IN BROWSER URL WHEN USING ROUTER
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
 	// find all the fruits
-	Cars.find({})
+	await Cars.find({})
 	  // render a template after they are found
 	  .then((data) => {
 		console.log(data);
@@ -45,6 +45,31 @@ router.delete('/:id', (req, res) => {
 })
 
 /*========================================
+		UPDATE
+========================================*/
+router.put('/:id', async (req, res) => {
+	const id = req.params.id
+	 await Cars.findByIdAndUpdate(id, req.body)
+		.then((data) => {
+			console.log(req.body)
+			res.redirect('/cars')
+		})
+		.catch((error) => {
+			// console.log(error);
+			res.json({ error });
+		  });
+	});
+	
+	
+
+
+
+
+
+
+
+
+/*========================================
 		CREATE
 ========================================*/
 router.post('/', (req, res) => {
@@ -65,7 +90,7 @@ router.get("/:id/edit", async (req, res) => {
 	await Cars.findById(carId)
 	  .then((data) => {
 		// render edit page and send fruit data
-		res.render("cars/edit", (data) );
+		  res.render("cars/edit", { data } );
 	  })
 	  // send error as json
 	  .catch((error) => {
@@ -73,10 +98,6 @@ router.get("/:id/edit", async (req, res) => {
 		res.json({ error });
 	  });
   });
-
-
-
-
 
 /*========================================
 		SHOW
