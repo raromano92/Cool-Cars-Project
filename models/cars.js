@@ -1,4 +1,5 @@
 const mongoose = require('./connection');
+// const mongooseMW = require('mongoose');
 
 const { Schema, model } = mongoose;
 
@@ -23,6 +24,6 @@ const carsSchema = new Schema({
 	},
 });
 
-const myCars = model('Car', carsSchema);
+const Cars = model('Cars', carsSchema);
 
-module.exports = myCars;
+module.exports = Cars;
