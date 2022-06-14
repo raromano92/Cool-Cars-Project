@@ -1,17 +1,20 @@
 {% layout "layout.liquid" %} {% block content %}
 
-	<a href="/cars/new"><button>Create A New Car</button></a>
-
+	<a href="/cars/new"><button>New Ride</button></a>
+	
 	<article>
-        <div>
+        
 		{% for item in data %}
         
-        <h1>{{ item.Make }}</h1>
-        <a href="/cars/{{ item._id }}"><img src="{{ item.Img }}" width="200" alt="pic"></a>
+        <!-- <h1>{{ item.Make }}</h1> -->
+		<div>
+        <a href="/cars/{{ item._id }}"><img class="img-btn" src="{{ item.Img }}" width="300" alt="pic"></a>
         <form action="/cars/{{ item._id }}?_method=DELETE" method="POST">
-			<input type="submit" value="REMOVE" />
+			<input class="img-btn" type="submit" value="REMOVE" />
+		</div>
+		
 		</form>
-    </div>
+    
 	</article>
 
 {% endfor %} 

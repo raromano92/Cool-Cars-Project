@@ -2,17 +2,18 @@
 <div>
   <form action="/cars/{{ data._id }}?_method=PUT" method="POST">
     <fieldset>
-      <legend>Edit</legend>
+      <legend>Edit Your Ride</legend>
       
-        Year:<input type="text" name="idk" placeholder="{{ data._id }}" value=""/>
-        Make:<input type="text" name="Make" placeholder="{{ data.Make }}" value=""/>
-        Model:<input type="text" name="Model" placeholder="{{ data.Model }}" value=""/>
-        Color:<input type="text" name="Color" placeholder="{{ data.Color }}" value=""/>
-        Price:<input type="text" name="Price" placeholder="{{ data.Price }}" value=""/>
-        Img:<input type="text" name="Img" placeholder="{{ data.Img }}" value=""/>
+      <label>Year:<input type="text" name="Year" placeholder="{{ data.Year }}" value=""/></label>
+      <label> Make:<input type="text" name="Make" placeholder="{{ data.Make }}" value=""/></label>
+        <label> Model:<input type="text" name="Model" placeholder="{{ data.Model }}" value=""/></label>
+            <label> Color:<input type="text" name="Color" placeholder="{{ data.Color }}" value=""/></label>
+                <label>Price:<input type="text" name="Price" placeholder="{{ data.Price }}" value=""/></label>
+                    <label>Img:<input type="text" name="Img" placeholder="{{ data.Img }}" value=""/></label>
      
     </fieldset>
-    <input type="submit" value="Submit Edit" />
+
+    <input type="submit" value="Confirm Edit" />
 </div>
 </form>
 {% endblock %}

@@ -25,6 +25,9 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
 
 		<!-- Jquery -->
 		<script
@@ -35,11 +38,12 @@
 
 		<!-- OUR CSS AND JS -->
 		<link rel="stylesheet" href="/styles.css" />
-		<script src="server.js" defer></script>
+		<!-- <script src="app.js" defer></script> -->
 	</head>
 	<body>
-		<h1>Dreamrides</h1>
-		<br />
+		
+		<h1 class="main-title">Dreamrides</h1>
+		
 		<main>{% block content %}My default content{% endblock %}</main>
 
 		<footer></footer>

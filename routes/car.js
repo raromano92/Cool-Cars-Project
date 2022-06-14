@@ -11,9 +11,9 @@ const router = express.Router();
 ========================================*/
 // ALL ROUTES START WITH /CARS IN BROWSER URL WHEN USING ROUTER
 router.get("/", async (req, res) => {
-	// find all the fruits
+	// find all the cars
 	await Cars.find({})
-	  // render a template after they are found
+	  // RENDER CAR INDEX PAGE AND GRAB THE DATA
 	  .then((data) => {
 		console.log(data);
 		res.render("cars/index", { data });
@@ -28,6 +28,7 @@ router.get("/", async (req, res) => {
 /*========================================
 		NEW
 ========================================*/
+// ADD A NEW CAR FORM
 router.get('/new', (req, res) => {
  	res.render('cars/new')
 })
@@ -35,6 +36,7 @@ router.get('/new', (req, res) => {
 /*========================================
 		DELETE
 ========================================*/
+// DELETE A CAR
 router.delete('/:id', (req, res) => {
 	const id = req.params.id
 	Cars.findByIdAndRemove(id)
@@ -47,6 +49,7 @@ router.delete('/:id', (req, res) => {
 /*========================================
 		UPDATE
 ========================================*/
+// GRAB ID FOR SPECIFIED CAR AND UPDATE DATA IN BODY (SCHEMA INFO)
 router.put('/:id', async (req, res) => {
 	const id = req.params.id
 	 await Cars.findByIdAndUpdate(id, req.body)
@@ -60,18 +63,10 @@ router.put('/:id', async (req, res) => {
 		  });
 	});
 	
-	
-
-
-
-
-
-
-
-
 /*========================================
 		CREATE
 ========================================*/
+// CREATE A NEW CAR FROM THE ADD PAGE
 router.post('/', (req, res) => {
 	Cars.create(req.body)
 	.then((data) => {
@@ -82,14 +77,14 @@ router.post('/', (req, res) => {
 /*========================================
 		EDIT
 ========================================*/
-// edit route
+// EDIT EXISTING CAR
 router.get("/:id/edit", async (req, res) => {
-	// get the id from params
+	// SET ID VARIABLE
 	const carId = req.params.id;
-	// get the fruit from the database
+	// FIND CAR IN DB
 	await Cars.findById(carId)
 	  .then((data) => {
-		// render edit page and send fruit data
+		// RENDER PAGE AND SEND DATA OF SPECIFIED CAR
 		  res.render("cars/edit", { data } );
 	  })
 	  // send error as json
@@ -102,6 +97,7 @@ router.get("/:id/edit", async (req, res) => {
 /*========================================
 		SHOW
 ========================================*/
+// GRAB CAR BY ID AND RENDER SHOW PAGE FOR IT
 router.get('/:id', (req, res) => {
 	const id = req.params.id
 	// Assign variable to specific ID
