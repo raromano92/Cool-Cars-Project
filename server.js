@@ -68,6 +68,7 @@ app.get('/', (req, res) => {
 app.use('/users', userRouter);
 app.use('/cars', carRouter);
 app.use('/seed', seedRouter);
+// app.use('./comments', commentsRouter);
 
 app.listen(4000, (req, res) => {
 	console.log(`SERVER RUNNING ON PORT ${PORT}`);

@@ -2,12 +2,12 @@
 
 <div>
 <article>
-    <img src="{{ data.Img }}" alt="pic">
-    <h2>Year: {{ data.Year }}</h2>
-    <h2>Make: {{ data.Make }}</h2>
-    <h2>Model: {{ data.Model }}</h2>
-    <h2>Color: {{ data.Color }}</h2>
-    <h2>Price: ${{ data.Price }}</h2>
+    <img src="{{ data.Img }}" width="800" alt="pic">
+    <h4>Year: {{ data.Year }}</h4>
+    <h4>Make: {{ data.Make }}</h4>
+    <h4>Model: {{ data.Model }}</h4>
+    <h4>Color: {{ data.Color }}</h4>
+    <h4>Price: ${{ data.Price }}</h4>
    
     <a href="/cars/{{ data._id }}/edit">
         <button>EDIT</button>
@@ -16,6 +16,22 @@
 </article>
 
 </div>
+
+<h2>Comments</h2>
+<form id="comments-form" method="POST" action="/cars/{{ data._id }}/comments">
+    <label>Notes:</label>
+    <textarea name="Content"></textarea>
+    <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Comment">
+</form>
+</form>
 
 
 

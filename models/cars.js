@@ -1,5 +1,5 @@
 const mongoose = require('./connection');
-// const mongooseMW = require('mongoose');
+
 
 const { Schema, model } = mongoose;
 

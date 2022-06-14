@@ -1,4 +1,7 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const commentsCtrl = require('../controllers/comments')
 
-module.exports = router;
+router.post('/cars/:id/reviews', reviewsCtrl.create)
+
+module.exports = router
