@@ -1,7 +1,16 @@
 const mongoose = require('./connection');
 
+const Schema = mongoose.Schema
 
-const { Schema, model } = mongoose;
+const commentsSchema = new Schema({
+	Comments: {
+		type: String,
+	},
+	Rating: {type: Number, min: 1, max: 5, default: 5}
+  }, {
+	timestamps: true
+  });
+
 
 const carsSchema = new Schema({
 	Year: {
@@ -22,8 +31,11 @@ const carsSchema = new Schema({
 	Img: {
 		type: String,
 	},
-});
+	Comments: 
+		[commentsSchema]
+  });
 
-const Cars = model('Cars', carsSchema);
+
+const Cars = mongoose.model('Cars', carsSchema);
 
 module.exports = Cars;

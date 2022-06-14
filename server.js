@@ -26,16 +26,6 @@ app.use(express.urlencoded({ extended: true })); // parse urlencoded request bod
 app.use(express.static('public')); // serve files from public statically (html, css, etc.)
 app.use(express.json());
 
-/*========================================
-        MONGOOSE
-========================================*/
-
-// const mongoose = require('mongoose');
-// mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
-// const db = mongoose.connection;
-// db.on('error', (error) => console.error(error));
-// db.once('open', () => console.log('Connected to Mongoose'));
-
 // middleware to setup session
 app.use(
 	session({
@@ -52,6 +42,7 @@ app.use(
 const userRouter = require('./routes/users');
 const carRouter = require('./routes/car');
 const seedRouter = require('./routes/seed');
+const commentsRouter = require('./routes/comments');
 
 /*========================================
         Routes
@@ -68,7 +59,7 @@ app.get('/', (req, res) => {
 app.use('/users', userRouter);
 app.use('/cars', carRouter);
 app.use('/seed', seedRouter);
-// app.use('./comments', commentsRouter);
+app.use('/', commentsRouter);
 
 app.listen(4000, (req, res) => {
 	console.log(`SERVER RUNNING ON PORT ${PORT}`);

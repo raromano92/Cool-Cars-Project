@@ -17,12 +17,12 @@
 
 </div>
 
-<h2>Comments</h2>
-<form id="comments-form" method="POST" action="/cars/{{ data._id }}/comments">
+<h2>Comment Section</h2>
+<form id="comments-form" method="POST" action="/cars/{{ data._id }}">
     <label>Notes:</label>
-    <textarea name="Content"></textarea>
+    <textarea name="Comments"></textarea>
     <label>Rating:</label>
-  <select name="rating">
+  <select name="Rating">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -31,7 +31,7 @@
   </select>
   <input type="submit" value="Add Comment">
 </form>
-</form>
+
 
 
 
