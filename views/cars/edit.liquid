@@ -1,5 +1,22 @@
 {% layout "layout.liquid" %} {% block content %}
 <div>
-    <h1>Edit Ride</h1>
+  <form action="/cars/{{ data._id }}?_method=PUT" method="POST">
+    <fieldset>
+      <legend>Edit {{ data._id }}</legend>
+      
+        Year:<input type="text" name="Year" placeholder="" value="{{ data.Year }}"/>
+        Make:<input type="text" name="Make" placeholder="" value="{{ data.Make }}"/>
+        Model:<input type="text" name="Model" placeholder="" value="{{ data.Model }}"/>
+        Color:<input type="text" name="Color" placeholder="" value="{{ data.Color }}"/>
+        Price:<input type="text" name="Price" placeholder="" value="{{ data.Price }}"/>
+        Img:<input type="text" name="Img" placeholder="" value="{{ data.Img }}"/>
+     
+     
+        
+      
+      
+    </fieldset>
+    <input type="submit" value="Edit {{ data._id }}" />
+  </form>
 </div>
 {% endblock %}
