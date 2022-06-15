@@ -88,7 +88,16 @@ router.post("/login", async (req, res) => {
 	  });
   });
   
-
+/*========================================
+		LOGOUT AND DESTROY SESSION
+========================================*/
+router.get("/logout", (req, res) => {
+	// destroy session and redirect to main page
+	req.session.destroy((err) => {
+	  res.redirect("/");
+	});
+  });
+  
 
 //////////////////////////////////////////
 // Export the Router
