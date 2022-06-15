@@ -12,18 +12,30 @@ router.post('/cars/:id', (req, res) => {
             car.save(function (err) {
                 res.redirect(`/cars/${car._id}`)
              }) 
+             
 		})
 		.catch((error) => {
 			// console.log(error);
 			res.json({ error });
         });
-        // res.redirect('/cars/')
-	});
-                
+});
+    
+// router.get('/cars/:id', (req, res) => {
+//     const id = req.params.id
+//     Cars.findById(id)
+//         .then((car) => {
+//             console.log(car)
+//             // car.Comments.id(req.body)
+//         })
+//     })
+
+ 
+    
+ 
          
         
  
-            // ;
+            
 
 
 

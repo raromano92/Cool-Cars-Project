@@ -74,13 +74,13 @@ const router = express.Router();
             },
         ];
         // Delete all fruits
-        myCars.deleteMany({}).then((data) => {
-            // Seed Starter Fruits
-            myCars.create(startCars).then((data) => {
-                // send created fruits as response to confirm creation
-                res.json(data);
-            });
-        });
+    //     myCars.deleteMany({}).then((data) => {
+    //         // Seed Starter Fruits
+    //         myCars.create(startCars).then((data) => {
+    //             // send created fruits as response to confirm creation
+    //             res.json(data);
+    //         });
+    //     });
     });
 
     module.exports = router

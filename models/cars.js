@@ -6,10 +6,13 @@ const commentsSchema = new Schema({
 	Comments: {
 		type: String,
 	},
-	Rating: {type: Number, min: 1, max: 5, default: 5}
-  }, {
+	Rating: {
+	    type: Number, min: 1, max: 5, default: 5 }
+	},
+   {
 	timestamps: true
-  });
+	});
+
 
 
 const carsSchema = new Schema({
