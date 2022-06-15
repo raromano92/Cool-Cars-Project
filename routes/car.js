@@ -15,12 +15,12 @@ router.get("/", async (req, res) => {
 	await Cars.find({})
 	  // RENDER CAR INDEX PAGE AND GRAB THE DATA
 	  .then((data) => {
-		console.log(data);
+		// console.log(data);
 		res.render("cars/index", { data });
 	  })
 	  // send error as json if they aren't
 	  .catch((error) => {
-		console.log(error);
+		// console.log(error);
 		res.json({ error });
 	  });
 });
@@ -54,7 +54,7 @@ router.put('/:id', async (req, res) => {
 	const id = req.params.id
 	 await Cars.findByIdAndUpdate(id, req.body)
 		.then((data) => {
-			console.log(req.body)
+			// console.log(req.body)
 			res.redirect('/cars')
 		})
 		.catch((error) => {
@@ -89,7 +89,7 @@ router.get("/:id/edit", async (req, res) => {
 	  })
 	  // send error as json
 	  .catch((error) => {
-		console.log(error);
+		// console.log(error);
 		res.json({ error });
 	  });
   });
@@ -98,18 +98,29 @@ router.get("/:id/edit", async (req, res) => {
 		SHOW
 ========================================*/
 // GRAB CAR BY ID AND RENDER SHOW PAGE FOR IT
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
 	const id = req.params.id
+	const carId = Cars.findById(id)
+	const commentId = carId.Comments
+	// console.log(carId)
 	// Assign variable to specific ID
 	Cars.findById(id)
 		.then((data) => {
-		res.render('cars/show', { data })
-	})
+			res.render('cars/show', { data })
+			// console.log(data)
+		})
 	.catch((error) => {
-		console.log(error);
+		// console.log(error);
 		res.json({ error });
 	  });
 });
+
+// router.delete('/:id', (req, res) => {
+    
+//     // console.log(commentId)
+    
+
+// });
   
 
 module.exports = router;

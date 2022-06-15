@@ -32,8 +32,9 @@
   <input type="submit" value="Edit" />
 
 
-  <form action="/cars/{{ data._id }}/{{ test._id }}?_method=PUT" method="POST">
+  <form action="/comments/{{ notes._id }}?_method=DELETE" method="POST">
   <input type="submit" value="DELETE" />
+    <input type="hidden" name="carId" value="{{ data._id }}">
   </form>
 
 </ul>
