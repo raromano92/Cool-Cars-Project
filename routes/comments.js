@@ -27,8 +27,8 @@ router.delete('/comments/:id/', async (req, res) => {
     const carCom = await Cars.findById(carId)
     await carCom.Comments.remove({ _id: id })
     carCom.save(function (err) {
-        res.redirect('/cars')
-        console.log(carCom)
+        res.redirect(`/cars/${carId}`)
+        // console.log(carCom)
     })
             // res.redirect('/cars/')
     })
