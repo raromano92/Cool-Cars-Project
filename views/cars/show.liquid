@@ -15,20 +15,26 @@
     </a>
 
 </article>
+<br />
 
+<h2>Comments</h2>
 
-
-
-<h2>Comments Section</h2>
 <div class="comment-container"> 
 {% for notes in data.Comments %}
 <form action="/cars/{{ data._id }}?_method=PUT" method="POST">
- <ul>
+
+</form>
+
     <div class="comment-list">
   <li>{{ notes.Comments }}</li> 
 </div>
+
   <input type="submit" value="Edit" />
+
+
+  <form action="/cars/{{ data._id }}/{{ notes.Comments }}?_method=DELETE" method="POST">
   <input type="submit" value="DELETE" />
+  </form>
 
 </ul>
 </div>
