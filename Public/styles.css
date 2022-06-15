@@ -22,3 +22,20 @@ div.img-btn {
     
   }
 
+  .editor-legend {
+    font-size: 30px;
+
+  }
+
+  .comment-list {
+    font-size: 24px;
+    color: 	#ff9090;
+    list-style-type: "\1F44D";
+  }
+
+  .ride-info {
+    font-size: 44px;
+    color: 	#ff9090;
+
+  }
+

@@ -20,15 +20,18 @@ router.post('/cars/:id', (req, res) => {
         });
 });
     
-// router.get('/cars/:id', (req, res) => {
-//     const id = req.params.id
-//     Cars.findById(id)
-//         .then((car) => {
-//             console.log(car)
-//             // car.Comments.id(req.body)
-//         })
-//     })
-
+// router.put('/cars/:id', async (req, res) => {
+// 	const id = req.params.id
+// 	 await Cars.findByIdAndUpdate(id, req.body)
+// 		.then((comment) => {
+// 			console.log(req.body)
+// 			res.redirect(`/cars/${car._id}`)
+// 		})
+// 		.catch((error) => {
+// 			// console.log(error);
+// 			res.json({ error });
+// 		  });
+// 	});
  
     
  
