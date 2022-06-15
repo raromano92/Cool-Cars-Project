@@ -16,16 +16,12 @@ const router = express.Router();
 
 // The Signup Routes (Get => form, post => submit form)
 router.get("/signup", (req, res) => {
-  res.render("users/signup.liquid");
-});
-
-router.post("/signup", (req, res) => {
-  res.send("signup");
+  res.render("users/signup");
 });
 
 // The login Routes (Get => form, post => submit form)
 router.get("/login", (req, res) => {
-  res.render("user/login.liquid");
+  res.render("users/login");
 });
 
 router.post("/login", (req, res) => {
