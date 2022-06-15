@@ -39,7 +39,7 @@ app.use(
 ////////////////////////////////////////////
 // Routers
 ////////////////////////////////////////////
-const userRouter = require('./routes/users');
+const userRouter = require('./routes/user');
 const carRouter = require('./routes/car');
 const seedRouter = require('./routes/seed');
 const commentsRouter = require('./routes/comments');
@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
           ROUTERS
   ========================================*/
 
-app.use('/users', userRouter);
+app.use('/user', userRouter);
 app.use('/cars', carRouter);
 app.use('/seed', seedRouter);
 app.use('/', commentsRouter);
