@@ -25,7 +25,7 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  res.send("login");
+  res.redirect("/cars");
 });
 
 router.post("/signup", async (req, res) => {
