@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
           ROUTERS
   ========================================*/
 
-app.use('/users', userRouter);
+app.use('/user', userRouter);
 app.use('/cars', carRouter);
 app.use('/seed', seedRouter);
 app.use('/', commentsRouter);
