@@ -1,19 +1,19 @@
 {% layout "layout.liquid" %} {% block content %}
 
-<a href="/user/logout"><button class="btn">Logout</button></a>
+<a href="/user/logout"><button class="btn-switch">Logout</button></a>
 <br />
 <br />
 <article>
-    <img src="{{ data.Img }}" width="800" alt="pic">
+    <img class="show-pic" src="{{ data.Img }}" alt="pic">
     <div class="ride-info">
-    <h4>Year: {{ data.Year }}</h4>
-    <h4>Make: {{ data.Make }}</h4>
-    <h4>Model: {{ data.Model }}</h4>
-    <h4>Color: {{ data.Color }}</h4>
-    <h4>Price: ${{ data.Price }}</h4>
+    <h3>Year: {{ data.Year }}</h3>
+    <h3>Make: {{ data.Make }}</h3>
+    <h3>Model: {{ data.Model }}</h3>
+    <h3>Color: {{ data.Color }}</h3>
+    <h3>Price: ${{ data.Price }}</h3>
 </div>
     <a href="/cars/{{ data._id }}/edit">
-        <button class="btn">Switch Rides?</button>
+        <button class="btn-switch">Switch Rides?</button>
     </a>
 
 </article>
@@ -54,7 +54,7 @@
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
-    <option value="4">4</option>
+    <option value="3">3</option>
     <option value="5">5</option>
   </select>
   <input type="submit" id=add-com value="Add Comment">
