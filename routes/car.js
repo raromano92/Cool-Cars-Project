@@ -24,7 +24,7 @@ router.use((req, res, next) => {
 // ALL ROUTES START WITH /CARS IN BROWSER URL WHEN USING ROUTER
 router.get("/", async (req, res) => {
 	// find all the cars
-	await Cars.find({})
+	await Cars.find({ username: req.session.username })
 	  // RENDER CAR INDEX PAGE AND GRAB THE DATA
 	  .then((data) => {
 		// console.log(data);
@@ -79,12 +79,32 @@ router.put('/:id', async (req, res) => {
 		CREATE
 ========================================*/
 // CREATE A NEW CAR FROM THE ADD PAGE
-router.post('/', (req, res) => {
+// router.post('/', (req, res) => {
+// 	Cars.create(req.body)
+// 	.then((data) => {
+// 		res.redirect('/cars')
+// 	})
+// })
+
+// create route
+router.post("/", (req, res) => {
+	// check if the readyToEat property should be true or false
+	// req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
+	// add username to req.body to track related user
+	req.body.username = req.session.username;
+	// create the new car
 	Cars.create(req.body)
-	.then((data) => {
-		res.redirect('/cars')
-	})
-})
+	  .then((car) => {
+		// redirect user to index page if successfully created item
+		res.redirect("/cars");
+	  })
+	  // send error as json
+	  .catch((error) => {
+		console.log(error);
+		res.json({ error });
+	  });
+  });
+  
 
 /*========================================
 		EDIT

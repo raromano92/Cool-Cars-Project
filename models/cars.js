@@ -34,6 +34,9 @@ const carsSchema = new Schema({
 	Img: {
 		type: String,
 	},
+	username: {
+		type: String,
+	},
 	Comments: 
 		[commentsSchema]
   });
