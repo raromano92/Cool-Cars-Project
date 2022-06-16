@@ -20,6 +20,32 @@ router.post('/cars/:id', (req, res) => {
 		});
 });
 
+router.get("/comments/:id", async (req, res) => {
+	// SET ID VARIABLE
+	const id = req.params.id
+    const comIdEdit = req.body.comId
+	// FIND CAR IN DB
+	 Cars.findById(comIdEdit)
+    //  carCom.Comments.findOneAndUpdate({ _id: id })
+		.then((com) => {
+			console.log(com)
+		// RENDER PAGE AND SEND DATA OF SPECIFIED COMMENT
+		  res.render("comments/edit", { com });
+	  })
+		
+	  // send error as json
+	  .catch((error) => {
+		// console.log(error);
+		res.json({ error });
+	  });
+});
+
+// router.put('/comments/:id', async (req, res) => {
+
+// })
+  
+
+
 // DELETE A COMMENT FROM THE SHOW PAGE TIED TO THE CAR ID
 router.delete('/comments/:id/', async (req, res) => {
     const id = req.params.id
@@ -32,5 +58,7 @@ router.delete('/comments/:id/', async (req, res) => {
         
     })
 });
+
+// EDIT AN EXISTING COMMENT
     
     module.exports = router;

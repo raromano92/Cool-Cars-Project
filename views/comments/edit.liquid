@@ -1,0 +1,14 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+    <form action="/comments/{{ com.id }}?_method=PUT" method="POST">
+    <fieldset>
+      <legend class="editor-com">Edit Your Comment</legend>
+      
+     <textarea name="comIdEdit" placeholder="{{ comIdEdit }}" id="" cols="30" rows="10"></textarea>
+     
+    </fieldset>
+
+    <input type="submit" id="edit-btn" value="Update" />
+</div>
+</form>
+{% endblock %}

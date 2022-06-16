@@ -28,12 +28,13 @@
 <!-- </form> -->
 
     <div id="com-list">
-  <li>{{ notes.Comments }}</li> 
+  <li id="note-items">{{ notes.Comments }}</li> 
 
 
-<form action="">
-  <input type="submit" id="com-btn1" value="Edit" />
-</form>
+  <form action="/comments/{{ notes._id }}?_method=GET">
+    <input type="submit" id="com-btn2" value="EDIT" />
+      <input type="hidden" name="" value="">
+    </form>
 
   <form action="/comments/{{ notes._id }}?_method=DELETE" method="POST">
   <input type="submit" id="com-btn2" value="DELETE" />
@@ -48,13 +49,13 @@
 <div id="com-entry">
 <form class="comments-form" method="POST" action="/cars/{{ data._id }}">
     <label>Notes:</label>
-    <textarea name="Comments" placeholder="Thoughts go here!"></textarea>
+    <textarea style="border: 2px solid lightgoldenrodyellow;" name="Comments" class="thoughts" placeholder="Thoughts go here!"></textarea>
     <label>Rating:</label>
-  <select name="Rating">
+  <select name="Rating" style="border: 2px solid lightgoldenrodyellow;">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
-    <option value="3">3</option>
+    <option value="4">4</option>
     <option value="5">5</option>
   </select>
   <input type="submit" id=add-com value="Add Comment">

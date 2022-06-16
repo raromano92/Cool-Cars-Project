@@ -7,8 +7,9 @@ body {
 
 h2 {
     color: lightgoldenrodyellow;
-    font-weight: bold;
+    font-weight: normal;
     margin-left: 20px;
+    font-family: 'Audiowide', cursive;
 }
 
 .main-title {
@@ -25,11 +26,19 @@ h2 {
 }
     h3 {
         font-size: 24px;
-        color: lightgoldenrodyellow;
-        font-weight: bold;
+        color: #ff9090;
+        font-weight: normal;
         font-style: normal;
         margin-left: 20px;
+        font-family: 'Audiowide', cursive;
         
+    }
+
+    .comments-form {
+      color: #29264E;
+      /* font-family: 'Audiowide', cursive; */
+      font-weight: 600;
+      font-size: 18px;
     }
 
   .editor-legend {
@@ -64,6 +73,20 @@ h2 {
     border: 1px solid #ffffff;
   }
 
+  #note-items {
+    color: 	#ff9090;
+    font-family: 'Audiowide', cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    padding-left: 3px;
+  }
+
+  .thoughts {
+    border-style: 5px solid lightgoldenrodyellow;
+  }
+
+
   #com-btn1 {
     width: 50px;
     height: 30px;
@@ -85,6 +108,7 @@ h2 {
 
   #com-entry{
     margin-top: -350px;
+    color: lightgoldenrodyellow;
   }
 
   #add-com {
@@ -115,8 +139,15 @@ h2 {
   }
 
   .show-pic {
-    width: 50%;
+    width: 60%;
     height: auto;
+    border-radius: 15px;
+  }
+
+  .car-pics {
+    max-width: 20%;
+    height: auto;
+    border-radius: 15px;
   }
 
   .btn-switch {
@@ -124,3 +155,5 @@ h2 {
     border: 1px solid #ffffff;
     margin-left: 10px;
   }
+
+  

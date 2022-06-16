@@ -30,8 +30,8 @@ app.use(express.json());
 // middleware to setup session
 app.use(
 	session({
-		secret: 'GUESS',
-		store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1/dreamrides' }),
+		secret: process.env.SECRET ,
+		store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
 		saveUninitialized: false,
 		resave: false,
 	})
