@@ -75,17 +75,6 @@ router.put('/:id', async (req, res) => {
 		  });
 	});
 	
-/*========================================
-		CREATE
-========================================*/
-// CREATE A NEW CAR FROM THE ADD PAGE
-// router.post('/', (req, res) => {
-// 	Cars.create(req.body)
-// 	.then((data) => {
-// 		res.redirect('/cars')
-// 	})
-// })
-
 // create route
 router.post("/", (req, res) => {
 	// check if the readyToEat property should be true or false
@@ -105,7 +94,6 @@ router.post("/", (req, res) => {
 	  });
   });
   
-
 /*========================================
 		EDIT
 ========================================*/
@@ -146,13 +134,5 @@ router.get('/:id', async (req, res) => {
 		res.json({ error });
 	  });
 });
-
-// router.delete('/:id', (req, res) => {
-    
-//     // console.log(commentId)
-    
-
-// });
-  
 
 module.exports = router;

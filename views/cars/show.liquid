@@ -1,7 +1,8 @@
 {% layout "layout.liquid" %} {% block content %}
 
 <a href="/user/logout"><button>Logout</button></a>
-
+<br />
+<br />
 <article>
     <img src="{{ data.Img }}" width="800" alt="pic">
     <div class="ride-info">
@@ -20,21 +21,22 @@
 
 <h2>Comments</h2>
 
-<div class="comment-container"> 
 {% for notes in data.Comments %}
+<div class="comment-container"> 
 <!-- <form action="/cars/{{ data._id }}?_method=PUT" method="POST"> -->
 
+<!-- </form> -->
+
+    <div id="com-list">
+  <li>{{ notes.Comments }}</li> 
+
+
+<form action="">
+  <input type="submit" id="com-btn1" value="Edit" />
 </form>
 
-    <div class="comment-list">
-  <li>{{ notes.Comments }}</li> 
-</div>
-
-  <input type="submit" value="Edit" />
-
-
   <form action="/comments/{{ notes._id }}?_method=DELETE" method="POST">
-  <input type="submit" value="DELETE" />
+  <input type="submit" id="com-btn2" value="DELETE" />
     <input type="hidden" name="carId" value="{{ data._id }}">
   </form>
 
@@ -43,8 +45,8 @@
 </form>
 {% endfor %}
 
-
-<form id="comments-form" method="POST" action="/cars/{{ data._id }}">
+<div id="com-entry">
+<form class="comments-form" method="POST" action="/cars/{{ data._id }}">
     <label>Notes:</label>
     <textarea name="Comments" placeholder="Thoughts go here!"></textarea>
     <label>Rating:</label>
@@ -55,9 +57,9 @@
     <option value="4">4</option>
     <option value="5">5</option>
   </select>
-  <input type="submit" value="Add Comment">
+  <input type="submit" id=add-com value="Add Comment">
 </form>
-
+</div>
 
 
 {% endblock %}

@@ -5,6 +5,11 @@ body {
     
 }
 
+h2 {
+    color: lightgoldenrodyellow;
+    font-weight: bold;
+}
+
 .main-title {
     color: mediumpurple;
     text-align: center;
@@ -31,6 +36,7 @@ div.img-btn {
     font-size: 24px;
     color: 	#ff9090;
     list-style-type: "\1F44D";
+    
   }
 
   .ride-info {
@@ -39,3 +45,36 @@ div.img-btn {
 
   }
 
+  .comment-container {
+    font-size: 18px;
+    color: 	#ff9090;
+    list-style-type: "\1F44D";
+    display: inline-flex;
+  }
+
+  #com-btn1 {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    padding: 0px;
+  }
+  
+
+  #com-btn2 {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    padding: 0px;
+  }
+
+  #com-entry{
+    margin-top: -350px;
+  }
+
+  #add-com {
+    margin-top: 50px;
+  }
+
+  #com-list{
+    padding: 20px;
+  }
