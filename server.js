@@ -64,6 +64,5 @@ app.use('/seed', seedRouter);
 app.use('/', commentsRouter);
 
 
-app.listen(4000, (req, res) => {
-	console.log(`SERVER RUNNING ON PORT ${PORT}`);
-});
+app.listen(process.env.PORT || 3000)
+
