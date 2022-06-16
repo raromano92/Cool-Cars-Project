@@ -25,9 +25,9 @@ router.get("/login", (req, res) => {
 });
 
 // LOGIN THEN REDIRECTED TO MAIN CARS PAGE
-router.post("/login", (req, res) => {
-  res.redirect("/cars");
-});
+// router.post("/login", (req, res) => {
+//   res.redirect("/cars");
+// });
 
 /*========================================
 		SIGNUP RESPONSE
@@ -54,7 +54,7 @@ router.post("/signup", async (req, res) => {
   
 
 /*========================================
-		LOGIN RESPONSE
+		LOGIN RESPONSE/REDIRECT
 ========================================*/
 router.post("/login", async (req, res) => {
 	// get the data from the request body

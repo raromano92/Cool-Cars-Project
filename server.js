@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const bcrypt = require('bcrypt');
 const PORT = 4000;
 
 /////////////////////////////////////////////////
@@ -22,20 +23,20 @@ const app = require('liquid-express-views')(express(), {
 /////////////////////////////////////////////////////
 app.use(morgan('tiny')); //logging
 app.use(methodOverride('_method')); // override for put and delete requests from forms
-app.use(express.urlencoded({ extended: true })); // parse urlencoded request bodies
+app.use(express.urlencoded({ extended: false })); // parse urlencoded request bodies
 app.use(express.static('public')); // serve files from public statically (html, css, etc.)
 app.use(express.json());
 
 // middleware to setup session
 app.use(
 	session({
-		secret: process.env.SECRET,
-		store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-		saveUninitialized: true,
+		secret: 'GUESS',
+		store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1/dreamrides' }),
+		saveUninitialized: false,
 		resave: false,
 	})
 );
-
+// process.env.SECRET
 ////////////////////////////////////////////
 // Routers
 ////////////////////////////////////////////
