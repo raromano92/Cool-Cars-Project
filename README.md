@@ -17,15 +17,15 @@ As a user I want to:
 - Be able to leave a comment/notes (i.e pros/cons, changes/mods you may want to make on car, etc.) specific to that car and tied to my username.
 
 Technologies Used
-HTML
-CSS
-Javascript
-Liquid-Express
-Node.js
-Express
-MongoDB
-MongoDB Atlas
-Mongoose
+- HTML
+- CSS
+- Javascript
+- Liquid-Express
+- Node.js
+- Express
+- MongoDB
+- MongoDB Atlas
+- Mongoose
 
 
 
