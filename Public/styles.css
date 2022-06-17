@@ -2,6 +2,7 @@
 
 * {
   font-family: 'Audiowide', cursive;
+
 }
 
 main {
@@ -11,8 +12,9 @@ main {
     flex-wrap: wrap;
 }
 
-body {
+body, main {
   background-color: #add8e6;
+  
 }
 
  #nav-bar1 {
@@ -31,7 +33,7 @@ body {
 
  #logout-show {
   position: absolute;
-  margin: -150px 900px 900px 1700px;
+  margin: -100px 900px 900px 1750px;
   background-color:mediumpurple;
   border: 1px solid #ffffff;
  }
@@ -178,12 +180,17 @@ h2 {
   }
 
   .car-pics {
-    max-width: 50%;
-    max-height: 80%;
+    max-width: 60%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 25px;
     padding-left: 0px;
     margin-left: 33px;
+    
+  }
+
+  .car-pics:hover {
+    transform: scale(1.15);
+    transition: transform .3s;
   }
 
   .btn-switch {
@@ -216,7 +223,7 @@ h2 {
 
   #main-page {
     text-align: left;
-    margin-left: 800px;
+    margin-left: 750px;
     margin-top: 50px;
     color: #29264E;
   }
@@ -232,7 +239,7 @@ h2 {
 
   #sign-pg {
     text-align: left;
-    margin-left: 800px;
+    margin-left: 750px;
     margin-top: 50px;
     color: #29264E;
   }
@@ -251,5 +258,18 @@ h2 {
     font-size: 24px;
   }
 
+  #lg-btn1 {
+    background-color:mediumpurple;
+    border: 1px solid #ffffff;
+  }
 
+  #lg-btn2 {
+    background-color:mediumpurple;
+    border: 1px solid #ffffff;
+  }
 
+  #sgn-btn {
+    background-color:mediumpurple;
+    border: 1px solid #ffffff;
+
+  }

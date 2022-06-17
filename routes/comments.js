@@ -24,33 +24,37 @@ router.get('/cars/:id/:commentsId', async (req, res) => {
 	// THIS IS THE COMMENT ID PARAM TIED TO THE CAR
 	const id = req.params.id;
 	const commentId = req.params.commentsId
-	// console.log(commentId)
 	// FIND CAR COMMENT ID IN DB
 	Cars.findById(id)
 		.then((car) => {
 			// RENDER PAGE AND SEND DATA OF SPECIFIED COMMENT
-			console.log(car)
 			res.render('comments/edit', { car, id, commentId });
 		})
-		// // send error as json
-		// .catch((error) => {
-		// 	// console.log(error);
-		// 	res.json({ error });
-		// });
+		// send error as json
+		.catch((error) => {
+			// console.log(error);
+			res.json({ error });
+		});
 });
 
-router.put('/cars/:id/:commentsId', (req, res) => {
+// EDIT AN EXISTING COMMENT TIED TO THE CAR ID
+router.put('/cars/:id/:commentId', async (req, res) => {
 	const id = req.params.id
-	const commentId = req.params.commentsId
-	 Cars.findByIdAndUpdate(id, commentId, req.body)
-	.then((comm) => {
-		comm.save(function (err) {
-			res.redirect('/cars');
-		});
-		})
-})
-
-
+	const commentId = req.body.commentId
+	const carId = await Cars.findById(id, commentId)
+	const testing = Cars.findByIdAndUpdate(carId, commentId, { new: true }, function (err, result) {
+		console.log(testing)
+		// testing.Comments.save()
+		if (err) {
+		  res.send(err);
+		} else {
+		  res.send(result);
+		}
+	  }
+	);
+  });
+	
+	
 // DELETE A COMMENT FROM THE SHOW PAGE TIED TO THE CAR ID
 router.delete('/comments/:id/', async (req, res) => {
 	const id = req.params.id;
@@ -61,7 +65,5 @@ router.delete('/comments/:id/', async (req, res) => {
 		res.redirect(`/cars/${carId}`);
 	});
 });
-
-// EDIT AN EXISTING COMMENT
 
 module.exports = router;
