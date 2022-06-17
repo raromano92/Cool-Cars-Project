@@ -1,6 +1,6 @@
 {% layout "layout.liquid" %} {% block content %}
 
-<a href="/user/logout"><button class="btn-switch">Logout</button></a>
+<a href="/user/logout"><button id="logout-show">Logout</button></a>
 <br />
 <br />
 <article>
@@ -31,7 +31,7 @@
   <li id="note-items">{{ notes.Comments }}</li> 
 
 
-  <form action="/comments/{{ notes._id }}?_method=GET">
+  <form action="/cars/{{ data._id }}/{{ notes._id }}" method="GET">
     <input type="submit" id="com-btn2" value="EDIT" />
       <input type="hidden" name="" value="">
     </form>

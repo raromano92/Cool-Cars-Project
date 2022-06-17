@@ -20,45 +20,48 @@ router.post('/cars/:id', (req, res) => {
 		});
 });
 
-router.get("/comments/:id", async (req, res) => {
-	// SET ID VARIABLE
-	const id = req.params.id
-    const comIdEdit = req.body.comId
-	// FIND CAR IN DB
-	 Cars.findById(comIdEdit)
-    //  carCom.Comments.findOneAndUpdate({ _id: id })
-		.then((com) => {
-			console.log(com)
-		// RENDER PAGE AND SEND DATA OF SPECIFIED COMMENT
-		  res.render("comments/edit", { com });
-	  })
-		
-	  // send error as json
-	  .catch((error) => {
-		// console.log(error);
-		res.json({ error });
-	  });
+router.get('/cars/:id/:commentsId', async (req, res) => {
+	// THIS IS THE COMMENT ID PARAM TIED TO THE CAR
+	const id = req.params.id;
+	const commentId = req.params.commentsId
+	// console.log(commentId)
+	// FIND CAR COMMENT ID IN DB
+	Cars.findById(id)
+		.then((car) => {
+			// RENDER PAGE AND SEND DATA OF SPECIFIED COMMENT
+			console.log(car)
+			res.render('comments/edit', { car, id, commentId });
+		})
+		// // send error as json
+		// .catch((error) => {
+		// 	// console.log(error);
+		// 	res.json({ error });
+		// });
 });
 
-// router.put('/comments/:id', async (req, res) => {
-
-// })
-  
+router.put('/cars/:id/:commentsId', (req, res) => {
+	const id = req.params.id
+	const commentId = req.params.commentsId
+	 Cars.findByIdAndUpdate(id, commentId, req.body)
+	.then((comm) => {
+		comm.save(function (err) {
+			res.redirect('/cars');
+		});
+		})
+})
 
 
 // DELETE A COMMENT FROM THE SHOW PAGE TIED TO THE CAR ID
 router.delete('/comments/:id/', async (req, res) => {
-    const id = req.params.id
-    const carId = req.body.carId
-    // console.log(req.params)
-    const carCom = await Cars.findById(carId)
-    await carCom.Comments.remove({ _id: id })
-    carCom.save(function (err) {
-        res.redirect(`/cars/${carId}`)
-        
-    })
+	const id = req.params.id;
+	const carId = req.body.carId;
+	const carCom = await Cars.findById(carId);
+	await carCom.Comments.remove({ _id: id });
+	carCom.save(function (err) {
+		res.redirect(`/cars/${carId}`);
+	});
 });
 
 // EDIT AN EXISTING COMMENT
-    
-    module.exports = router;
+
+module.exports = router;

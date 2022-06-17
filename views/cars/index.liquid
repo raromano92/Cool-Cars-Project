@@ -1,7 +1,12 @@
 {% layout "layout.liquid" %} {% block content %}
+	
 
-	<a href="/cars/new"><button class="btn">New Ride</button></a>
-	<a href="/user/logout"><button class="btn">Logout</button></a>
+	<a href="/cars/new"><button id="nav-bar1">New Ride</button></a>
+	<br />
+	<br />
+	<a href="/user/logout"><button id="nav-bar2">Logout</button></a>
+
+<br />
 
 	<br />
 	<br />
@@ -12,7 +17,7 @@
         
         <!-- <h1>{{ item.Make }}</h1> -->
 		<div>
-        <a href="/cars/{{ item._id }}"><img class="car-pics" src="{{ item.Img }}" width="300" alt="pic"></a>
+        <a href="/cars/{{ item._id }}"><img class="car-pics" src="{{ item.Img }}" width="600" alt="pic"></a>
         <form action="/cars/{{ item._id }}?_method=DELETE" method="POST">
 			<input id="rmcar-btn" type="submit" value="REMOVE" />
 		</div>
