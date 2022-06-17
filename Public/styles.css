@@ -1,5 +1,9 @@
 /* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"; */
 
+* {
+  font-family: 'Audiowide', cursive;
+}
+
 main {
     background-color: #add8e6;
     display: inline-flex;
@@ -13,14 +17,14 @@ body {
 
  #nav-bar1 {
   position: absolute;
-  margin: -150px 900px 900px 1550px;
+  margin: -100px 900px 900px 30px;
   background-color:mediumpurple;
   border: 1px solid #ffffff;
  }
 
  #nav-bar2 {
   position: absolute;
-  margin: -150px 900px 900px 1700px;
+  margin: -100px 900px 900px 1750px;
   background-color:mediumpurple;
   border: 1px solid #ffffff;
  }
