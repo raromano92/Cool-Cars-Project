@@ -190,7 +190,7 @@ h2 {
 
   .car-pics:hover {
     transform: scale(1.15);
-    transition: transform .3s;
+    transition: transform .25s;
   }
 
   .btn-switch {
@@ -266,10 +266,12 @@ h2 {
   #lg-btn2 {
     background-color:mediumpurple;
     border: 1px solid #ffffff;
+    margin-left: 20px;
+    margin-top: 10px;
   }
 
   #sgn-btn {
     background-color:mediumpurple;
     border: 1px solid #ffffff;
-
+    margin-top: 10px;
   }
