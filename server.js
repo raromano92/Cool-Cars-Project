@@ -23,7 +23,7 @@ const app = require('liquid-express-views')(express(), {
 /////////////////////////////////////////////////////
 app.use(morgan('tiny')); //logging
 app.use(methodOverride('_method')); // override for put and delete requests from forms
-app.use(express.urlencoded({ extended: false })); // parse urlencoded request bodies
+app.use(express.urlencoded({ extended: true })); // parse urlencoded request bodies
 app.use(express.static('public')); // serve files from public statically (html, css, etc.)
 app.use(express.json());
 
@@ -32,7 +32,7 @@ app.use(
 	session({
 		secret: process.env.SECRET ,
 		store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-		saveUninitialized: false,
+		saveUninitialized: true,
 		resave: false,
 	})
 );
@@ -50,8 +50,8 @@ const commentsRouter = require('./routes/comments');
         Routes
 ========================================*/
 
-app.get('/', (req, res) => {
-	res.render('index.liquid');
+app.get('/user/login', (req, res) => {
+	res.render('users/index.liquid');
 });
 
 /*========================================
@@ -64,5 +64,7 @@ app.use('/seed', seedRouter);
 app.use('/', commentsRouter);
 
 
-app.listen(process.env.PORT || 4000)
+app.listen(4000, (req, res) => {
+	console.log(`SERVER RUNNING ON PORT ${PORT}`);
+});
 

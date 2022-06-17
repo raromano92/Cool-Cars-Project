@@ -1,19 +1,19 @@
 {% layout "layout.liquid" %} {% block content %}
-<div>
-  <form action="/cars/{{ data._id }}?_method=PUT" method="POST">
+
+  <form id="update-form" action="/cars/{{ data._id }}?_method=PUT" method="POST">
     <fieldset>
       <legend class="editor-legend">Update Your Ride!</legend>
       
-      <label>Year:<input type="text" name="Year" placeholder="{{ data.Year }}" value=""/></label>
-      <label> Make:<input type="text" name="Make" placeholder="{{ data.Make }}" value=""/></label>
-        <label> Model:<input type="text" name="Model" placeholder="{{ data.Model }}" value=""/></label>
-            <label> Color:<input type="text" name="Color" placeholder="{{ data.Color }}" value=""/></label>
-                <label>Price:<input type="text" name="Price" placeholder="{{ data.Price }}" value=""/></label>
-                    <label>Img:<input type="text" name="Img" placeholder="{{ data.Img }}" value=""/></label>
+      <label>Year:<input id="txt-box" type="text" name="Year" placeholder="{{ data.Year }}" value=""/></label>
+      <label> Make:<input id="txt-box" type="text" name="Make" placeholder="{{ data.Make }}" value=""/></label>
+        <label> Model:<input id="txt-box" type="text" name="Model" placeholder="{{ data.Model }}" value=""/></label>
+            <label> Color:<input id="txt-box" type="text" name="Color" placeholder="{{ data.Color }}" value=""/></label>
+                <label>Price:<input id="txt-box" type="text" name="Price" placeholder="{{ data.Price }}" value=""/></label>
+                    <label>Img:<input id="txt-box" type="text" name="Img" placeholder="{{ data.Img }}" value=""/></label>
      
     </fieldset>
 
     <input type="submit" id="edit-btn" value="Confirm" />
-</div>
-</form>
+  </form>
+
 {% endblock %}

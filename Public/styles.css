@@ -111,7 +111,7 @@ h2 {
   }
 
   .thoughts {
-    border-style: 5px solid lightgoldenrodyellow;
+    border-style: 2px solid red;
   }
 
 
@@ -188,4 +188,64 @@ h2 {
     margin-left: 10px;
   }
 
+  #update-form {
+    text-align: left;
+    margin-left: 800px;
+    margin-top: 50px;
+    color: #29264E;
+  }
+
+  #new-form {
+    text-align: left;
+    margin-left: 800px;
+    margin-top: 50px;
+    color: #29264E;
+  }
   
+  #txt-box {
+    border: 2px solid lightgoldenrodyellow;
+  }
+
+  #txt-boxnew {
+    border: 2px solid lightgoldenrodyellow;
+  }
+
+  #main-page {
+    text-align: left;
+    margin-left: 800px;
+    margin-top: 50px;
+    color: #29264E;
+  }
+
+  #mainpg-input {
+    border: 2px solid lightgoldenrodyellow;
+  }
+
+  #log-lgd {
+    color: lightgoldenrodyellow;
+    font-size: 24px;
+  }
+
+  #sign-pg {
+    text-align: left;
+    margin-left: 800px;
+    margin-top: 50px;
+    color: #29264E;
+  }
+
+  #sign-lgd {
+    color: lightgoldenrodyellow;
+    font-size: 24px;
+  }
+  
+  #sign-lgd {
+    border: 2px solid lightgoldenrodyellow;
+  }
+
+  #welcome {
+    color: lightgoldenrodyellow;
+    font-size: 24px;
+  }
+
+
+

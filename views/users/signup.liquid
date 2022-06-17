@@ -1,11 +1,11 @@
 {% layout "layout.liquid" %} {% block content %}
 <div>
-  <form action="/user/signup" method="post">
+  <form id="sign-pg" action="/user/signup" method="post">
     <fieldset>
-      <legend>Welcome! Sign up below.</legend>
-      <label>USERNAME: <input type="text" name="username" required /> </label>
+      <legend id="welcome">Welcome! Sign up below.</legend>
+      <label>USERNAME: <input id="sign-lgd" type="text" name="username" required /> </label>
       <label
-        >PASSWORD: <input type="password" name="password" required />
+        >PASSWORD: <input id="sign-lgd" type="password" name="password" required />
       </label>
       <br />
       <input type="submit" value="Create Account" />
