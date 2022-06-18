@@ -1,11 +1,13 @@
 {% layout "layout.liquid" %} {% block content %}
 <div>
-    <form action="/cars/{{ id }}/{{ commentId }}?_method=PUT" method="POST">
+  {% for comment in car.Comments %}
+  {% if comment._id == commentId %}
+    <form action="/cars/{{ car._id }}/{{ comment._id }}?_method=PUT" method="POST">
     <fieldset>
       <legend class="editor-com">Edit Your Comment</legend>
       
-      <textarea name="{{ commentId }}" placeholder="" id="" cols="30" rows="10">
-      </textarea>
+      <input type="text" name="Comments" placeholder="Hmm..." value="">
+      </input>
 
 
       </fieldset>
@@ -14,4 +16,6 @@
     
 </div>
 </form>
+{% endif %}
+{% endfor %}
 {% endblock %}

@@ -38,7 +38,7 @@ const carsSchema = new Schema({
 		type: String,
 	},
 	Comments: 
-		[commentsSchema]
+		[commentsSchema],
   });
 
 

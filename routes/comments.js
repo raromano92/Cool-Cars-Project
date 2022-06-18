@@ -23,7 +23,7 @@ router.post('/cars/:id', (req, res) => {
 router.get('/cars/:id/:commentsId', async (req, res) => {
 	// THIS IS THE COMMENT ID PARAM TIED TO THE CAR
 	const id = req.params.id;
-	const commentId = req.params.commentsId
+	const commentId = req.params.commentsId;
 	// FIND CAR COMMENT ID IN DB
 	Cars.findById(id)
 		.then((car) => {
@@ -38,23 +38,36 @@ router.get('/cars/:id/:commentsId', async (req, res) => {
 });
 
 // EDIT AN EXISTING COMMENT TIED TO THE CAR ID
-router.put('/cars/:id/:commentId', async (req, res) => {
-	const id = req.params.id
-	const commentId = req.body.commentId
-	const carId = await Cars.findById(id, commentId)
-	const testing = Cars.findByIdAndUpdate(carId, commentId, { new: true }, function (err, result) {
-		console.log(testing)
-		// testing.Comments.save()
-		if (err) {
-		  res.send(err);
-		} else {
-		  res.send(result);
-		}
-	  }
-	);
-  });
+router.put('/cars/:carId/:commentId', (req, res) => {
+	const carId = req.params.carId;
+	// console.log("carid", carId); - CAR ID PARAM
+	const commentId = req.params.commentId;
+	// console.log("comment", commentId) - COMMENT ID PARAM
+	Cars.findById(carId)
+		.then((car) => {
+			// console.log(car); - GRABBING BOTH IDS WITH 'car' param TO RETURN THE TWO
+			const carCom = car.Comments.id(commentId);
+			// SETTING VARIABLE TO GIVE US THAT EXACT COMMENT 
+			// console.log(carCom)
+			// IDS ARE OBJECTS, SO USE STRING METHOD TO CONVERT TO STRINGS
+			if (String(carCom._id) === String(req.params.commentId)) {
+				carCom.Comments = req.body.Comments;
+				// console.log(test)
+				// **REMEMBER TO LOOP THRU COMMENTS ON EDIT PAGE AND ASSIGN "name" WHICH PULLS FROM SCHEMA PROPERTY**
+				return car.save();
+			} else {
+				return;
+			}
+		})
+		.then((car) => {
+			res.redirect(`/cars/${carId}`);
+		});
+})
+
+
 	
-	
+
+
 // DELETE A COMMENT FROM THE SHOW PAGE TIED TO THE CAR ID
 router.delete('/comments/:id/', async (req, res) => {
 	const id = req.params.id;
