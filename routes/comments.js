@@ -20,7 +20,7 @@ router.post('/cars/:id', (req, res) => {
 		});
 });
 
-router.get('/cars/:id/:commentsId', async (req, res) => {
+router.get('/cars/:id/:commentsId/:ratingId', async (req, res) => {
 	// THIS IS THE COMMENT ID PARAM TIED TO THE CAR
 	const id = req.params.id;
 	const commentId = req.params.commentsId;
@@ -29,6 +29,7 @@ router.get('/cars/:id/:commentsId', async (req, res) => {
 		.then((car) => {
 			// RENDER PAGE AND SEND DATA OF SPECIFIED COMMENT
 			res.render('comments/edit', { car, id, commentId });
+			console.log("this string" + car)
 		})
 		// send error as json
 		.catch((error) => {
@@ -63,10 +64,6 @@ router.put('/cars/:carId/:commentId', (req, res) => {
 			res.redirect(`/cars/${carId}`);
 		});
 })
-
-
-	
-
 
 // DELETE A COMMENT FROM THE SHOW PAGE TIED TO THE CAR ID
 router.delete('/comments/:id/', async (req, res) => {

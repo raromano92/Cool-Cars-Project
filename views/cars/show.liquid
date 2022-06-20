@@ -23,45 +23,49 @@
 <h2>Comments</h2>
 
 {% for notes in data.Comments %}
-<div class="comment-container"> 
-<!-- <form action="/cars/{{ data._id }}?_method=PUT" method="POST"> -->
 
-<!-- </form> -->
+<div class="comment-container"> 
 
     <div id="com-list">
-  <li id="note-items">{{ notes.Comments }}</li> 
+      
+  <li id="note-items">{{ notes.Comments }}</li>
+  
+  <span class="fa fa-star">{{ notes.Rating }}</span>
+     
+  
 
+  
 
+  
   <form action="/cars/{{ data._id }}/{{ notes._id }}" method="GET">
     <input type="submit" id="com-btn2" value="EDIT" />
       <input type="hidden" name="" value="">
     </form>
-
+  
   <form action="/comments/{{ notes._id }}?_method=DELETE" method="POST">
   <input type="submit" id="com-btn2" value="DELETE" />
     <input type="hidden" name="carId" value="{{ data._id }}">
   </form>
-
-</ul>
 </div>
-</form>
-{% endfor %}
 
-<div id="com-entry">
+  {% endfor %}
 <form class="comments-form" method="POST" action="/cars/{{ data._id }}">
+  <div id="com-entry">
     <label>Notes:</label>
     <textarea style="border: 2px solid lightgoldenrodyellow;" name="Comments" class="thoughts" placeholder="Thoughts go here!"></textarea>
-    <label>Rating:</label>
-  <select name="Rating" style="border: 2px solid lightgoldenrodyellow;">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-  <input type="submit" id=add-com value="Add Comment">
+    <label>Rating:</label> 
+<select name="Rating" value="" style="border: 2px solid lightgoldenrodyellow;">
+  <option value="5">⭐⭐⭐⭐⭐</option>
+  <option value="4">⭐⭐⭐⭐</option>
+  <option value="3">⭐⭐⭐</option>
+  <option value="2">⭐⭐</option>
+  <option value="1">⭐</option>
+  
+
+  <input type="submit" id=add-com value="Add Comment" />
 </form>
-</div>
+</select>
+
 
 
 {% endblock %}

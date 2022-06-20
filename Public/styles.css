@@ -2,7 +2,10 @@
 
 * {
   font-family: 'Audiowide', cursive;
-
+  background-color: #add8e6;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 main {
@@ -10,11 +13,6 @@ main {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-body, main {
-  background-color: #add8e6;
-  
 }
 
  #nav-bar1 {
@@ -58,10 +56,10 @@ h2 {
     
 }
     h3 {
-        font-size: 24px;
+        font-size: 26px;
         color: #ff9090;
-        font-weight: normal;
-        font-style: normal;
+        font-weight: bold;
+        font-style: italic;
         margin-left: 20px;
         font-family: 'Audiowide', cursive;
         
@@ -244,6 +242,14 @@ h2 {
     color: #29264E;
   }
 
+  .edit-combox {
+    text-align: left;
+    margin-left: 800px;
+    margin-top: 50px;
+    color: #29264E;
+    
+  }
+
   #sign-lgd {
     color: lightgoldenrodyellow;
     font-size: 24px;
@@ -274,4 +280,8 @@ h2 {
     background-color:mediumpurple;
     border: 1px solid #ffffff;
     margin-top: 10px;
+  }
+
+  #edit-com-entry {
+    border: 2px solid lightgoldenrodyellow;
   }

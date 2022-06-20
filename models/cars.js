@@ -36,6 +36,7 @@ const carsSchema = new Schema({
 	},
 	username: {
 		type: String,
+		required: true
 	},
 	Comments: 
 		[commentsSchema],
