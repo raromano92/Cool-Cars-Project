@@ -9,7 +9,7 @@ const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const bcrypt = require('bcrypt');
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 /////////////////////////////////////////////////
 // Create our Express Application Object
@@ -30,7 +30,7 @@ app.use(express.json());
 // middleware to setup session
 app.use(
 	session({
-		secret: process.env.SECRET ,
+		secret: process.env.SECRET,
 		store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
 		saveUninitialized: true,
 		resave: false,
@@ -64,8 +64,8 @@ app.use('/seed', seedRouter);
 app.use('/', commentsRouter);
 
 
-app.listen(4000, (req, res) => {
-	console.log(`SERVER RUNNING ON PORT ${PORT}`);
+app.listen(PORT, (req, res) => {
+	console.log(`SERVER RUNNING ON PORT`);
 });
 
 // tseting
