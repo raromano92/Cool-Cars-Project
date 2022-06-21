@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 // Database Connection
 /////////////////////////////////////////////
 // Setup inputs for our connect function
-const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = process.env.MONGO_URI;
 const CONFIG = {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
@@ -16,15 +16,8 @@ const CONFIG = {
 
 // Establish Connection
 mongoose.connect(DATABASE_URL, CONFIG);
-// mongoose.connection.on('connected', () => {
-//   console.log(`Mongoose connected to ${mongoose.connection.host}:${mongoose.connection.port}`);
-// });
 
-// mongoose.connection.on("error", (err) => {
-//   console.log("Could not connect to MongoDB!", err);
-// });
 
-// Events for when connection opens/disconnects/errors
 mongoose.connection
 	.on('open', () => console.log('Connected to Mongoose'))
 	.on('close', () => console.log('Disconnected from Mongoose'))
