@@ -21,7 +21,7 @@ router.get("/signup", (req, res) => {
 
 // TAKES YOU TO THE LOGIN PAGE
 router.get("/login", (req, res) => {
-  res.render("users/login");
+  res.render("users/index");
 });
 
 // LOGIN THEN REDIRECTED TO MAIN CARS PAGE
