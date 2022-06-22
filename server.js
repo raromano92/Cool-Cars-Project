@@ -50,7 +50,7 @@ const commentsRouter = require('./routes/comments');
         Routes
 ========================================*/
 
-app.get('/user/login', (req, res) => {
+app.get('/', (req, res) => {
 	res.render('users/index.liquid');
 });
 
