@@ -51,7 +51,7 @@ const commentsRouter = require('./routes/comments');
 ========================================*/
 
 app.get('/', (req, res) => {
-	res.send('Welcome');
+	res.redirect('/user/login');
 });
 
 /*========================================
