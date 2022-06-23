@@ -184,6 +184,7 @@ h2 {
     padding-left: 0px;
     margin-left: 33px;
     border: 2px solid #ffffff;
+    margin-top: -20px;
     
   }
 
@@ -285,4 +286,12 @@ h2 {
 
   #edit-com-entry {
     border: 2px solid lightgoldenrodyellow;
+  }
+
+  .car-name {
+    text-align: center;
+    color: #ff9090;
+    font-size: 22px;
+    margin-right: 200px;
+    padding-bottom: 0px;
   }

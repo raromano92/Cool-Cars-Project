@@ -15,8 +15,9 @@
         
 		{% for item in data %}
         
-        <!-- <h1>{{ item.Make }}</h1> -->
+        
 		<div>
+			<h5 class="car-name">{{ item.Make }} {{ item.Model }}</h5>
         <a href="/cars/{{ item._id }}"><img class="car-pics" src="{{ item.Img }}" width="600" alt="pic"></a>
         <form action="/cars/{{ item._id }}?_method=DELETE" method="POST">
 			<input id="rmcar-btn" type="submit" value="REMOVE" />
